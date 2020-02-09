@@ -1,0 +1,3 @@
+main
+	prog1
+	prog2

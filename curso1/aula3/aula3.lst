@@ -1,0 +1,196 @@
+CCS PCM C Compiler, Version 5.084d, 1               16-jul-19 14:01
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+               Filename:   C:\Users\Marcelo Franchini\Desktop\Pic\css\aula3.lst
+
+               ROM used:   77 words (4%)
+                           Largest free fragment is 1971
+               RAM used:   17 (8%) at main() level
+                           18 (8%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   019
+0003:  NOP
+.................... #include <16F628A.h> 
+.................... //////////// Standard Header file for the PIC16F628A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F628A 
+....................  
+.................... #list 
+....................  
+.................... #fuses XT, NOMCLR, NOWDT 
+.................... #use delay(clock=4MHz) 
+0004:  MOVLW  2C
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  01
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  4A
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  GOTO   049 (RETURN)
+....................  
+.................... int8 segmentos[] = { 
+....................    0b00111111, 0b00000110, 0b01011011, 0b01001111, 
+....................    0b01100110, 0b01101101, 0b01111100, 0b00000111, 
+....................    0b01111111, 0b01100111 
+.................... }; 
+*
+001F:  MOVLW  3F
+0020:  MOVWF  20
+0021:  MOVLW  06
+0022:  MOVWF  21
+0023:  MOVLW  5B
+0024:  MOVWF  22
+0025:  MOVLW  4F
+0026:  MOVWF  23
+0027:  MOVLW  66
+0028:  MOVWF  24
+0029:  MOVLW  6D
+002A:  MOVWF  25
+002B:  MOVLW  7C
+002C:  MOVWF  26
+002D:  MOVLW  07
+002E:  MOVWF  27
+002F:  MOVLW  7F
+0030:  MOVWF  28
+0031:  MOVLW  67
+0032:  MOVWF  29
+....................  
+.................... void main () { 
+*
+0019:  MOVF   03,W
+001A:  ANDLW  1F
+001B:  MOVWF  03
+001C:  MOVLW  07
+001D:  MOVWF  1F
+001E:  BCF    03.7
+*
+0033:  CLRF   2A
+....................  
+....................    int numero = 0;    
+....................    while (true) { 
+....................       output_b( segmentos[numero] ); 
+0034:  MOVLW  20
+0035:  ADDWF  2A,W
+0036:  MOVWF  04
+0037:  BCF    03.7
+0038:  MOVF   00,W
+0039:  MOVWF  2B
+003A:  BSF    03.5
+003B:  CLRF   06
+003C:  BCF    03.5
+003D:  MOVF   2B,W
+003E:  MOVWF  06
+....................       numero++; 
+003F:  INCF   2A,F
+....................        if (numero > 9) { 
+0040:  MOVF   2A,W
+0041:  SUBLW  09
+0042:  BTFSS  03.0
+....................         numero = 0; 
+0043:  CLRF   2A
+....................       } 
+....................       delay_ms(1000); 
+0044:  MOVLW  04
+0045:  MOVWF  2B
+0046:  MOVLW  FA
+0047:  MOVWF  2C
+0048:  GOTO   004
+0049:  DECFSZ 2B,F
+004A:  GOTO   046
+004B:  GOTO   034
+....................    } 
+.................... } 
+....................  
+004C:  SLEEP
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... /*void  main () { 
+....................     
+....................  
+....................  
+....................  
+....................  
+.................... #include <16F628.h> 
+.................... #fuses XT, NOWDT, NOPROTECT, NOPUT 
+.................... #use delay( clock=4MHz ) 
+.................... void main () { 
+....................    int btn1 = 0; 
+....................    int btn2 = 0; 
+....................     
+....................    while (true) { 
+....................        if (!input(PIN_A1)) { 
+....................          btn1 = !btn1; 
+....................          while(!input(PIN_A1)); 
+....................        } 
+....................        if (!input(PIN_A2)) { 
+....................          btn2 = !btn2; 
+....................          while(!input(PIN_A2)); 
+....................        } 
+....................         
+....................        if (btn1 == 0 && btn2 == 0) { 
+....................          delay_ms(100); 
+....................        } 
+....................         
+....................        if (btn1 == 0 && btn2 == 1) { 
+....................          delay_ms(500); 
+....................        } 
+....................         
+....................        if (btn1 == 1 && btn2 == 0) { 
+....................          delay_ms(1000); 
+....................        } 
+....................         
+....................        if (btn1 == 1 && btn2 == 1) { 
+....................          delay_ms(2000); 
+....................        } 
+....................         
+....................        output_toggle(PIN_B0); 
+....................    } 
+....................     
+.................... }*/ 
+
+Configuration Fuses:
+   Word  1: 3F41   NOWDT PUT XT NOMCLR BROWNOUT NOLVP NOCPD NOPROTECT

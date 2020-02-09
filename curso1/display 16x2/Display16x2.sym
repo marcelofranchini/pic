@@ -1,0 +1,115 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 @sprintf_string
+006     @PSTRINGCN_695.P1
+006     @PRINTF_D_695.P2
+006     lcd_init.i
+006     @PSTRINGC_695.@SCRATCH1
+007     @PRINTF_D_695.P1
+007-00A lcd_init.LCD_INIT_STRING
+007     @PSTRINGC_695.@SCRATCH2
+007     @PSTRINGCN_695.@SCRATCH1
+008     @PSTRINGCN_695.@SCRATCH2
+008     @PRINTF_D_695.@SCRATCH1
+009     @PRINTF_D_695.@SCRATCH2
+00A     @PRINTF_D_695.@SCRATCH3
+00B     lcd_init.@SCRATCH1
+00B     @PRINTF_D_695.@SCRATCH4
+00C     lcd_putc.c
+00C     @DIV88.P1
+00D     @delay_ms1.P1
+00D     lcd_gotoxy.x
+00D     @DIV88.P1
+00E     lcd_gotoxy.y
+00E     @DIV88.@SCRATCH1
+00F     lcd_gotoxy.address
+010     lcd_gotoxy.@SCRATCH1
+011     lcd_send_byte.address
+012     lcd_send_byte.n
+013     lcd_read_byte.low
+013     lcd_send_byte.@SCRATCH1
+014     lcd_read_byte.high
+014     lcd_send_nibble.n
+015     lcd_read_byte.@SCRATCH1
+F83     lcd
+F83     PSP_DATA
+F8C     lcdlat
+F95     lcdtris
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const710.call
+000016  @const715.call
+000022  @delay_ms1
+000048  lcd_send_nibble
+000066  lcd_read_nibble
+000072  lcd_read_byte
+0000B4  lcd_send_byte
+0000EE  lcd_init
+000162  lcd_gotoxy
+000184  lcd_putc
+0001D4  @PSTRINGC_695
+0001F6  @PSTRINGCN_695
+000216  @DIV88
+00023E  @PRINTF_D_695
+0002EA  @cinit1
+0002EA  MAIN
+0002FE  @cinit2
+
+Project Directory:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\display 16x2\
+
+Project Files:
+    Display16x2.c                                           [17-jul-19 15:42  CRC=0886E292]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [06-abr-19 10:10  CRC=1CE50E9D]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [22-fev-16 10:05  CRC=D1A6378A]
+
+Source signature=C8B86043
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=BD89
+
+Units:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\display 16x2\Display16x2 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   Display16x2.xsym
+    Errors:      Display16x2.err
+    Ext Symbols: Display16x2.esym
+    INHX32:      Display16x2.hex
+    Symbols:     Display16x2.sym
+    List:        Display16x2.lst
+    Debug/COFF:  Display16x2.cof
+    Project:     Display16x2.ccspjt
+    Call Tree:   Display16x2.tre
+    Statistics:  Display16x2.STA

@@ -1,0 +1,11 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP12F675 -DL -O11111114 -fo16 -N"C:\Users\Marcelo Franchini\Desktop\Pic\Mikro\Curso Pic WR\Aula5(Pic12Osc).mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\Users\Marcelo Franchini\Desktop\Pic\Mikro\Curso Pic WR\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -IP"C:\Users\Marcelo Franchini\Desktop\Pic\Mikro\Curso Pic WR\" "Aula5_Pic12Osc_.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+hint: 0	1139	Available RAM: 48 [bytes], Available ROM: 1024 [bytes]	 
+diagnostics: 0	122	Compilation Started	Aula5_Pic12Osc_.c
+diagnostics: 28	123	Compiled Successfully	Aula5_Pic12Osc_.c
+diagnostics: 0	127	All files Compiled in 31 ms	 
+hint: 0	1144	Used RAM (bytes): 2 (4%)  Free RAM (bytes): 46 (96%)	Used RAM (bytes): 2 (4%)  Free RAM (bytes): 46 (96%)
+hint: 0	1144	Used ROM (program words): 54 (5%)  Free ROM (program words): 970 (95%)	Used ROM (program words): 54 (5%)  Free ROM (program words): 970 (95%)
+diagnostics: 0	125	Project Linked Successfully	Aula5(Pic12Osc).mcppi
+diagnostics: 0	128	Linked in 16 ms	 
+diagnostics: 0	129	Project 'Aula5(Pic12Osc).mcppi' completed: 47 ms	 
+diagnostics: 0	103	Finished successfully: 22 ago 2019, 13:11:56	Aula5(Pic12Osc).mcppi

@@ -1,0 +1,93 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-00D segmentos
+00E-00F numero
+010     modo
+011     contador
+012-013 mostrarNumero.valor
+012     MAIN.@SCRATCH1
+014     mostrarNumero.unidade
+015     mostrarNumero.dezena
+016     mostrarNumero.centena
+017     mostrarNumero.milhar
+018     ativarDisplay.pino
+018     mostrarNumero.@SCRATCH1
+019     ativarDisplay.numero
+019     mostrarNumero.@SCRATCH2
+01A     @WRITEBITA.P1
+01A     @delay_ms1.P2
+01A-01B @DIV1616.P3
+01A     ativarDisplay.@SCRATCH1
+01B     @WRITEBITA.P1
+01C-01D @DIV1616.P1
+01C-01D @WRITEBITA.P2
+01E     @DIV1616.@SCRATCH1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @DIV1616
+000058  @WRITEBITA
+000096  @delay_ms1
+0000C0  ativarDisplay
+000112  mostrarNumero
+00020C  MAIN
+00020C  @cinit1
+000224  @cinit2
+
+Project Directory:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\
+
+Project Files:
+    contador-regressivo-parte1.c                            [17-jul-19 11:26  CRC=157A40F1]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [06-abr-19 10:10  CRC=1CE50E9D]
+
+Source signature=4F445E2B
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=A8B2
+
+Units:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\contador-regressivo-parte1 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   contador-regressivo-parte1.xsym
+    Errors:      contador-regressivo-parte1.err
+    Ext Symbols: contador-regressivo-parte1.esym
+    INHX32:      contador-regressivo-parte1.hex
+    Symbols:     contador-regressivo-parte1.sym
+    List:        contador-regressivo-parte1.lst
+    Debug/COFF:  contador-regressivo-parte1.cof
+    Project:     contador-regressivo-parte1.ccspjt
+    Call Tree:   contador-regressivo-parte1.tre
+    Statistics:  contador-regressivo-parte1.STA

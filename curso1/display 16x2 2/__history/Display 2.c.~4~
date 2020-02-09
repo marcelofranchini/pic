@@ -1,0 +1,26 @@
+#include <18F4550.h>
+#fuses HS, MCLR, NOWDT
+#use delay(clock=20MHz)
+
+#include <lcd.c>
+
+int opcao = 0;  // 0 = manual; 1 = semi-automático; 2 = automático;
+
+void main () {
+
+      while(true) {
+         if ( input(PIN_B0) == 0) {
+            if ( opcao > 0) {
+            opcao--;
+            }
+            while( input(PIN_B0) == 0);
+         }
+         
+           if ( input(PIN_B1) == 0) {
+            if ( opcao < 2) {
+            opcao++;
+            }
+            while( input(PIN_B1) == 0);
+         }
+      }
+}

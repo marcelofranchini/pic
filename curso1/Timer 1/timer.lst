@@ -1,0 +1,183 @@
+CCS PCM C Compiler, Version 5.084d, 1               26-jul-19 14:18
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+               Filename:   C:\Users\Marcelo Franchini\Desktop\Pic\css\Timer 1\timer.lst
+
+               ROM used:   112 words (5%)
+                           Largest free fragment is 1936
+               RAM used:   15 (7%) at main() level
+                           16 (7%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   053
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   7F,W
+0009:  MOVWF  20
+000A:  MOVF   0A,W
+000B:  MOVWF  27
+000C:  CLRF   0A
+000D:  SWAPF  20,F
+000E:  MOVF   04,W
+000F:  MOVWF  22
+0010:  MOVF   77,W
+0011:  MOVWF  23
+0012:  MOVF   78,W
+0013:  MOVWF  24
+0014:  MOVF   79,W
+0015:  MOVWF  25
+0016:  MOVF   7A,W
+0017:  MOVWF  26
+0018:  BCF    03.7
+0019:  BCF    03.5
+001A:  BTFSS  0B.5
+001B:  GOTO   01E
+001C:  BTFSC  0B.2
+001D:  GOTO   02F
+001E:  MOVF   22,W
+001F:  MOVWF  04
+0020:  MOVF   23,W
+0021:  MOVWF  77
+0022:  MOVF   24,W
+0023:  MOVWF  78
+0024:  MOVF   25,W
+0025:  MOVWF  79
+0026:  MOVF   26,W
+0027:  MOVWF  7A
+0028:  MOVF   27,W
+0029:  MOVWF  0A
+002A:  SWAPF  21,W
+002B:  MOVWF  03
+002C:  SWAPF  7F,F
+002D:  SWAPF  7F,W
+002E:  RETFIE
+.................... #include <16F628A.h> 
+.................... //////////// Standard Header file for the PIC16F628A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F628A 
+....................  
+.................... #list 
+....................  
+.................... #fuses XT, MCLR, NOWDT 
+.................... #use delay(clock = 4MHZ) 
+*
+003E:  MOVLW  2A
+003F:  MOVWF  04
+0040:  BCF    03.7
+0041:  MOVF   00,W
+0042:  BTFSC  03.2
+0043:  GOTO   052
+0044:  MOVLW  01
+0045:  MOVWF  78
+0046:  CLRF   77
+0047:  DECFSZ 77,F
+0048:  GOTO   047
+0049:  DECFSZ 78,F
+004A:  GOTO   046
+004B:  MOVLW  4A
+004C:  MOVWF  77
+004D:  DECFSZ 77,F
+004E:  GOTO   04D
+004F:  GOTO   050
+0050:  DECFSZ 00,F
+0051:  GOTO   044
+0052:  GOTO   06B (RETURN)
+....................  
+....................  
+....................  
+....................  
+.................... int contador = 0; 
+....................  
+.................... #INT_TIMER0 
+.................... void interrupcao_t0(){ 
+....................      clear_interrupt(INT_TIMER0); 
+*
+002F:  BCF    0B.2
+....................       
+....................      if(contador == 10){ 
+0030:  MOVF   28,W
+0031:  SUBLW  0A
+0032:  BTFSS  03.2
+0033:  GOTO   03A
+....................      output_toggle(PIN_B2); 
+0034:  BSF    03.5
+0035:  BCF    06.2
+0036:  MOVLW  04
+0037:  BCF    03.5
+0038:  XORWF  06,F
+....................      contador = 0; 
+0039:  CLRF   28
+....................      } 
+....................  
+....................       contador++; 
+003A:  INCF   28,F
+003B:  BCF    0B.2
+003C:  BCF    0A.3
+003D:  GOTO   01E
+.................... } 
+....................  
+....................  
+.................... void main() { 
+*
+0053:  MOVF   03,W
+0054:  ANDLW  1F
+0055:  MOVWF  03
+0056:  CLRF   28
+0057:  MOVLW  07
+0058:  MOVWF  1F
+0059:  BCF    03.7
+....................        
+....................       enable_interrupts(GLOBAL); // chave geral de interrupções. 
+005A:  MOVLW  C0
+005B:  IORWF  0B,F
+....................       enable_interrupts(INT_TIMER0); 
+005C:  BSF    0B.5
+....................     
+....................       setup_timer_0(T0_INTERNAL | T0_DIV_128); // t0_internal é a fonte do clock, prescaler 1 nao tem, vai até 256(pausa maior).. | bit a bit 
+005D:  BSF    03.5
+005E:  MOVF   01,W
+005F:  ANDLW  C0
+0060:  IORLW  06
+0061:  MOVWF  01
+....................     
+....................     
+....................       while(true) { 
+....................       output_toggle(PIN_B0); 
+0062:  BCF    06.0
+0063:  MOVLW  01
+0064:  BCF    03.5
+0065:  XORWF  06,F
+....................       delay_ms(1000); 
+0066:  MOVLW  04
+0067:  MOVWF  29
+0068:  MOVLW  FA
+0069:  MOVWF  2A
+006A:  GOTO   03E
+006B:  DECFSZ 29,F
+006C:  GOTO   068
+006D:  BSF    03.5
+006E:  GOTO   062
+....................        
+....................       } 
+....................  
+.................... } 
+006F:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F61   NOWDT PUT XT MCLR BROWNOUT NOLVP NOCPD NOPROTECT

@@ -1,0 +1,47 @@
+[PROJECT]
+Target=Tensao.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.084d
+Compiler=PCH
+[Target Data]
+FileList=Tensao.c
+[Tensao.c]
+Type=4
+[mru-list]
+1=Tensao.c
+
+[defines]
+buildcount=12
+
+[ProjectLog]
+Days=2
+D1=23-07-2019
+D1_L=4
+D1_L1=[49768]Started Editing.
+D1_L2=[50135]Stopped Editing.
+D1_L3=[50163]Started Editing.
+D1_L4=[50875]Stopped Editing.
+D2=24-07-2019
+D2_L=7
+D2_L1=[37675]Started Editing.
+D2_L2=[37892]Stopped Editing.
+TotalEdit=16
+TotalDebug=0
+D2_E=16
+D2_D=0
+D2_L3=[37892]Project Closed.
+D2_L4=[37900]Project Opened.
+D2_L5=[37954]Started Editing.
+D2_L6=[38193]Stopped Editing.
+D2_L7=[38193]Project Closed.
+
+[Opened Files]
+1=..\Timer 1\timer.c
+t1=1
+Count=1
+[Units]
+Count=1
+1=Tensao (main)
+
+[fileformats]
+forcecoff=0

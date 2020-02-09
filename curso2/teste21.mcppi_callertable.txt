@@ -1,0 +1,18 @@
+main
+	__CC2DW
+		____DoICP
+	UART1_Init
+	UART1_Write_Text
+		UART1_Write
+	UART1_Write
+	UART1_Data_Ready
+	UART1_Read
+	ADC_Read
+		Delay_22us
+	Mul_32x32_U
+	Div_32x32_S
+		SDIV3232L
+		COMFREM
+	IntToStr
+		WordToStr
+			Div_16X16_U

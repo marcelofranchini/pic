@@ -1,0 +1,7 @@
+[PROJECTS]
+Count=3
+Project0=Aula12(Pic12F675_Ad).mcppi
+Project1=Aula13(16g_7Seg).mcppi
+Project2=Aula14(16g_7Seg_Proj).mcppi
+[ActiveProject]
+Index=2

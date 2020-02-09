@@ -1,0 +1,64 @@
+[PROJECT]
+Target=timer.hex
+Processor_Text=PIC16F628A
+CCSVersion=5.084d
+Compiler=PCM
+[Target Data]
+FileList=timer.c
+[timer.c]
+Type=4
+[mru-list]
+1=timer.c
+
+[defines]
+buildcount=15
+
+[ProjectLog]
+Days=3
+D1=24-07-2019
+D1_L=8
+D1_L1=[38521]Stopped Editing.
+D1_L2=[39920]Started Editing.
+D1_L3=[40268]Stopped Editing.
+D1_L4=[48999]Started Editing.
+D1_L5=[49300]Stopped Editing.
+D1_L6=[52711]Started Editing.
+D1_L7=[53040]Stopped Editing.
+TotalEdit=23
+TotalDebug=0
+D1_E=2
+D1_D=0
+D1_L8=[57585]Project Closed.
+D2=25-07-2019
+D2_L=4
+D2_L1=[33814]Project Opened.
+D2_L2=[56454]Started Editing.
+D2_L3=[57527]Stopped Editing.
+D2_E=18
+D2_D=0
+D2_L4=[57527]Project Closed.
+D3=26-07-2019
+D3_L=8
+D3_L1=[33950]Project Opened.
+D3_L2=[51471]Started Editing.
+D3_L3=[51821]Stopped Editing.
+D3_L4=[53725]Started Editing.
+D3_L5=[54126]Stopped Editing.
+D3_L6=[54705]Started Editing.
+D3_L7=[54717]Stopped Editing.
+D3_E=3
+D3_D=0
+D3_L8=[54717]Project Closed.
+
+[Opened Files]
+1=..\Timer 2\timer2.c
+t1=1
+Count=2
+2=..\display 16x2 2\Display 2.c
+t2=59
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=timer (main)

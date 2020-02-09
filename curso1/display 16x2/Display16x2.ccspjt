@@ -1,0 +1,55 @@
+[PROJECT]
+Target=Display16x2.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.084d
+Compiler=PCH
+[Target Data]
+FileList=Display16x2.c
+[Display16x2.c]
+Type=4
+[mru-list]
+1=Display16x2.c
+
+[defines]
+buildcount=10
+
+[Opened Files]
+1=..\display 16x2 2\Display 2.c
+t1=9
+Count=1
+[Units]
+Count=1
+1=Display16x2 (main)
+
+[ProjectLog]
+Days=3
+D1=17-07-2019
+D1_L=1
+D1_L1=[56825]Stopped Editing.
+D2=18-07-2019
+D2_L=10
+D2_L1=[34765]Project Opened.
+D2_L2=[35507]Project Closed.
+D2_L3=[35516]Project Opened.
+D2_L4=[36413]Started Editing.
+D2_L5=[36726]Stopped Editing.
+D2_L6=[37277]Started Editing.
+D2_L7=[37623]Stopped Editing.
+D2_L8=[39184]Started Editing.
+D2_L9=[39904]Stopped Editing.
+TotalEdit=17
+TotalDebug=0
+D2_E=13
+D2_D=0
+D2_L10=[39904]Project Closed.
+D3=19-07-2019
+D3_L=4
+D3_L1=[33327]Project Opened.
+D3_L2=[33581]Started Editing.
+D3_L3=[33791]Stopped Editing.
+D3_E=4
+D3_D=0
+D3_L4=[33791]Project Closed.
+
+[fileformats]
+forcecoff=0

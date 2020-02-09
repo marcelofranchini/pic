@@ -1,0 +1,54 @@
+#include <18F4550.h>
+#fuses XT, NOMCLR, NOWDT
+#use delay(clock=4MHz)
+
+int8 segmentos[] = {
+   0b00111111, 0b00000110, 0b01011011, 0b01001111,
+   0b01100110, 0b01101101, 0b01111100, 0b00000111,
+   0b01111111, 0b01100111
+};
+
+int16 numero = 7;
+
+void ativarDisplay(int pino, int numero) {
+   output_bit (PIN_A3, 0); // porta a A3 em nivel lógico 0
+   output_bit (PIN_A4, 0);
+   output_bit (PIN_A5, 0);
+   output_bit (PIN_A2, 0);  
+   
+   output_bit (pino, 1);
+   
+   output_d( segmentos[numero] ); // porta d(números) vetor binários.
+   delay_ms(25); // tempo para percorrer.
+}
+
+void mostrarValor(int16 valor){
+   int milhar;
+   int centena;
+   int dezena;
+   int unidade;
+   
+   milhar = valor / 1000; // ex 1560 / 1000 = 1.560 inteiro 1
+   centena = valor % 1000 / 100; // 1560 % 1000 = 560 / 100 = 5.60
+   dezena = valor % 1000 % 100 / 10; // 1560 % 1000 = 560 % 100 = 60 / 10 = 6.0
+   unidade = valor % 1000 % 100 % 10; // 1560 % 1000 = 560 % 100 = 60 % 10 = 0
+   
+   ativarDisplay(PIN_A2, milhar);
+   ativarDisplay(PIN_A3, centena);
+   ativarDisplay(PIN_A4, dezena);
+   ativarDisplay(PIN_A5, unidade);
+   
+}
+
+void main () {
+   
+   while(true) {
+      if ( input(PIN_B0) == 0){
+         if( numero > 0) {
+         numero --;
+         }
+      }
+      while(input(PIN_B0) == 0); 
+   }
+   
+}

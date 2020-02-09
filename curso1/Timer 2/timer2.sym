@@ -1,0 +1,92 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     contador
+01A     MAIN.@SCRATCH1
+01B     @delay_ms1.P1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AE  interrupcao_t0
+0000C2  @delay_ms1
+0000EC  MAIN
+0000EC  @cinit1
+000100  @cinit2
+
+Project Directory:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\Timer 2\
+
+Project Files:
+    timer2.c                                                [26-jul-19 15:30  CRC=80BE51D2]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [06-abr-19 10:10  CRC=1CE50E9D]
+
+Source signature=BA886F0C
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=3E86
+
+Units:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\Timer 2\timer2 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   timer2.xsym
+    Errors:      timer2.err
+    Ext Symbols: timer2.esym
+    INHX32:      timer2.hex
+    Symbols:     timer2.sym
+    List:        timer2.lst
+    Debug/COFF:  timer2.cof
+    Project:     timer2.ccspjt
+    Call Tree:   timer2.tre
+    Statistics:  timer2.STA

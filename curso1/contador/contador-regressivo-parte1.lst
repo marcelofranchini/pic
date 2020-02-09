@@ -1,0 +1,445 @@
+CCS PCH C Compiler, Version 5.084d, 1               17-jul-19 11:26
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+               Filename:   C:\Users\Marcelo Franchini\Desktop\Pic\css\contador-regressivo-parte1.lst
+
+               ROM used:   752 bytes (2%)
+                           Largest free fragment is 32016
+               RAM used:   19 (1%) at main() level
+                           31 (2%) worst case
+               Stack used: 3 locations
+               Stack size: 31
+
+*
+0000:  GOTO   020C
+.................... #include <18F4550.h> 
+.................... //////////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4550 
+0004:  CLRF   01
+0006:  CLRF   02
+0008:  CLRF   00
+000A:  CLRF   03
+000C:  MOVF   1D,W
+000E:  BTFSS  FD8.2
+0010:  GOTO   001C
+0014:  MOVF   1C,W
+0016:  BTFSC  FD8.2
+0018:  GOTO   0056
+001C:  MOVLW  10
+001E:  MOVWF  1E
+0020:  BCF    FD8.0
+0022:  RLCF   1A,F
+0024:  RLCF   1B,F
+0026:  RLCF   00,F
+0028:  RLCF   03,F
+002A:  MOVF   1D,W
+002C:  SUBWF  03,W
+002E:  BTFSS  FD8.2
+0030:  GOTO   0038
+0034:  MOVF   1C,W
+0036:  SUBWF  00,W
+0038:  BTFSS  FD8.0
+003A:  GOTO   004C
+003E:  MOVF   1C,W
+0040:  SUBWF  00,F
+0042:  BTFSS  FD8.0
+0044:  DECF   03,F
+0046:  MOVF   1D,W
+0048:  SUBWF  03,F
+004A:  BSF    FD8.0
+004C:  RLCF   01,F
+004E:  RLCF   02,F
+0050:  DECFSZ 1E,F
+0052:  GOTO   0020
+0056:  RETURN 0
+0058:  MOVF   1A,W
+005A:  ANDLW  07
+005C:  MOVWF  00
+005E:  RRCF   1A,W
+0060:  MOVWF  01
+0062:  RRCF   01,F
+0064:  RRCF   01,F
+0066:  MOVLW  1F
+0068:  ANDWF  01,F
+006A:  MOVF   01,W
+006C:  ADDWF  1C,W
+006E:  MOVWF  FE9
+0070:  MOVLW  00
+0072:  ADDWFC 1D,W
+0074:  MOVWF  FEA
+0076:  CLRF   01
+0078:  INCF   01,F
+007A:  INCF   00,F
+007C:  BRA    0080
+007E:  RLCF   01,F
+0080:  DECFSZ 00,F
+0082:  BRA    007E
+0084:  MOVF   1B,F
+0086:  BZ    008E
+0088:  MOVF   01,W
+008A:  IORWF  FEF,F
+008C:  BRA    0094
+008E:  COMF   01,F
+0090:  MOVF   01,W
+0092:  ANDWF  FEF,F
+0094:  RETURN 0
+....................  
+.................... #list 
+....................  
+.................... #fuses XT, NOMCLR, NOWDT 
+.................... #use delay(clock=4MHz) 
+0096:  CLRF   FEA
+0098:  MOVLW  1A
+009A:  MOVWF  FE9
+009C:  MOVF   FEF,W
+009E:  BZ    00BC
+00A0:  MOVLW  01
+00A2:  MOVWF  01
+00A4:  CLRF   00
+00A6:  DECFSZ 00,F
+00A8:  BRA    00A6
+00AA:  DECFSZ 01,F
+00AC:  BRA    00A4
+00AE:  MOVLW  4A
+00B0:  MOVWF  00
+00B2:  DECFSZ 00,F
+00B4:  BRA    00B2
+00B6:  BRA    00B8
+00B8:  DECFSZ FEF,F
+00BA:  BRA    00A0
+00BC:  GOTO   0110 (RETURN)
+....................  
+.................... int8 segmentos[] = { 
+....................    0b00111111, 0b00000110, 0b01011011, 0b01001111, 
+....................    0b01100110, 0b01101101, 0b01111100, 0b00000111, 
+....................    0b01111111, 0b01100111 
+.................... }; 
+....................  
+.................... int16 numero = 0; 
+.................... int modo = 0; // 0: configuração; 1: contagem regressiva 
+.................... int contador = 0; 
+....................  
+.................... void ativarDisplay(int pino, int numero) { 
+....................    output_bit (PIN_A3, 0); 
+00C0:  BCF    F89.3
+00C2:  BCF    F92.3
+....................    output_bit (PIN_A4, 0); 
+00C4:  BCF    F89.4
+00C6:  BCF    F92.4
+....................    output_bit (PIN_A5, 0); 
+00C8:  BCF    F89.5
+00CA:  BCF    F92.5
+....................    output_bit (PIN_A2, 0);   
+00CC:  BCF    F89.2
+00CE:  BCF    F92.2
+....................     
+....................    output_bit (pino, 1); 
+00D0:  MOVFF  18,1A
+00D4:  MOVLW  01
+00D6:  MOVWF  1B
+00D8:  MOVLW  0F
+00DA:  MOVWF  1D
+00DC:  MOVLW  89
+00DE:  MOVWF  1C
+00E0:  RCALL  0058
+00E2:  MOVFF  18,1A
+00E6:  CLRF   1B
+00E8:  MOVLW  0F
+00EA:  MOVWF  1D
+00EC:  MOVLW  92
+00EE:  MOVWF  1C
+00F0:  RCALL  0058
+....................     
+....................    output_d( segmentos[numero] ); 
+00F2:  CLRF   03
+00F4:  MOVF   19,W
+00F6:  ADDLW  04
+00F8:  MOVWF  FE9
+00FA:  MOVLW  00
+00FC:  ADDWFC 03,W
+00FE:  MOVWF  FEA
+0100:  MOVFF  FEF,1A
+0104:  CLRF   F95
+0106:  MOVFF  1A,F8C
+....................    delay_ms(25); 
+010A:  MOVLW  19
+010C:  MOVWF  1A
+010E:  BRA    0096
+0110:  RETURN 0
+.................... } 
+....................  
+.................... void mostrarNumero(int16 valor) { 
+....................    int unidade; 
+....................    int dezena; 
+....................    int centena; 
+....................    int milhar; 
+....................     
+....................    milhar = valor / 1000; 
+0112:  MOVFF  13,1B
+0116:  MOVFF  12,1A
+011A:  MOVLW  03
+011C:  MOVWF  1D
+011E:  MOVLW  E8
+0120:  MOVWF  1C
+0122:  RCALL  0004
+0124:  MOVFF  01,17
+....................    centena = valor % 1000 / 100; 
+0128:  MOVFF  13,1B
+012C:  MOVFF  12,1A
+0130:  MOVLW  03
+0132:  MOVWF  1D
+0134:  MOVLW  E8
+0136:  MOVWF  1C
+0138:  RCALL  0004
+013A:  MOVFF  00,18
+013E:  MOVFF  03,19
+0142:  MOVFF  03,1B
+0146:  MOVFF  00,1A
+014A:  CLRF   1D
+014C:  MOVLW  64
+014E:  MOVWF  1C
+0150:  RCALL  0004
+0152:  MOVFF  01,16
+....................    dezena = valor % 1000 % 100 / 10; 
+0156:  MOVFF  13,1B
+015A:  MOVFF  12,1A
+015E:  MOVLW  03
+0160:  MOVWF  1D
+0162:  MOVLW  E8
+0164:  MOVWF  1C
+0166:  RCALL  0004
+0168:  MOVFF  00,18
+016C:  MOVFF  03,19
+0170:  MOVFF  03,1B
+0174:  MOVFF  00,1A
+0178:  CLRF   1D
+017A:  MOVLW  64
+017C:  MOVWF  1C
+017E:  RCALL  0004
+0180:  MOVFF  00,18
+0184:  MOVFF  03,19
+0188:  MOVFF  03,1B
+018C:  MOVFF  00,1A
+0190:  CLRF   1D
+0192:  MOVLW  0A
+0194:  MOVWF  1C
+0196:  RCALL  0004
+0198:  MOVFF  01,15
+....................    unidade = valor % 1000 % 100 % 10; 
+019C:  MOVFF  13,1B
+01A0:  MOVFF  12,1A
+01A4:  MOVLW  03
+01A6:  MOVWF  1D
+01A8:  MOVLW  E8
+01AA:  MOVWF  1C
+01AC:  RCALL  0004
+01AE:  MOVFF  00,18
+01B2:  MOVFF  03,19
+01B6:  MOVFF  03,1B
+01BA:  MOVFF  00,1A
+01BE:  CLRF   1D
+01C0:  MOVLW  64
+01C2:  MOVWF  1C
+01C4:  RCALL  0004
+01C6:  MOVFF  00,18
+01CA:  MOVFF  03,19
+01CE:  MOVFF  03,1B
+01D2:  MOVFF  00,1A
+01D6:  CLRF   1D
+01D8:  MOVLW  0A
+01DA:  MOVWF  1C
+01DC:  RCALL  0004
+01DE:  MOVFF  00,14
+....................     
+....................    ativarDisplay (PIN_A2, milhar); 
+01E2:  MOVLW  02
+01E4:  MOVWF  18
+01E6:  MOVFF  17,19
+01EA:  RCALL  00C0
+....................    ativarDisplay (PIN_A3, centena); 
+01EC:  MOVLW  03
+01EE:  MOVWF  18
+01F0:  MOVFF  16,19
+01F4:  RCALL  00C0
+....................    ativarDisplay (PIN_A4, dezena); 
+01F6:  MOVLW  04
+01F8:  MOVWF  18
+01FA:  MOVFF  15,19
+01FE:  RCALL  00C0
+....................    ativarDisplay (PIN_A5, unidade); 
+0200:  MOVLW  05
+0202:  MOVWF  18
+0204:  MOVFF  14,19
+0208:  RCALL  00C0
+020A:  RETURN 0
+.................... } 
+....................  
+.................... void main () { 
+020C:  CLRF   FF8
+020E:  BCF    FD0.7
+0210:  CLRF   0F
+0212:  CLRF   0E
+0214:  CLRF   10
+0216:  CLRF   11
+0218:  MOVF   FC1,W
+021A:  ANDLW  C0
+021C:  IORLW  0F
+021E:  MOVWF  FC1
+0220:  MOVLW  07
+0222:  MOVWF  FB4
+0224:  MOVLW  3F
+0226:  MOVWF  04
+0228:  MOVLW  06
+022A:  MOVWF  05
+022C:  MOVLW  5B
+022E:  MOVWF  06
+0230:  MOVLW  4F
+0232:  MOVWF  07
+0234:  MOVLW  66
+0236:  MOVWF  08
+0238:  MOVLW  6D
+023A:  MOVWF  09
+023C:  MOVLW  7C
+023E:  MOVWF  0A
+0240:  MOVLW  07
+0242:  MOVWF  0B
+0244:  MOVLW  7F
+0246:  MOVWF  0C
+0248:  MOVLW  67
+024A:  MOVWF  0D
+....................     
+....................    while(true) { 
+....................       if (modo == 0) { 
+024C:  MOVF   10,F
+024E:  BNZ   02C0
+....................            if ( input(PIN_B0) == 0 ) { 
+0250:  BSF    F93.0
+0252:  BTFSC  F81.0
+0254:  BRA    0278
+....................                if (numero > 0) { 
+0256:  MOVF   0E,F
+0258:  BNZ   025E
+025A:  MOVF   0F,F
+025C:  BZ    0266
+....................                   numero--; 
+025E:  MOVF   0E,W
+0260:  BTFSC  FD8.2
+0262:  DECF   0F,F
+0264:  DECF   0E,F
+....................                } 
+....................                while ( input(PIN_B0) == 0 ) { 
+0266:  BSF    F93.0
+0268:  BTFSC  F81.0
+026A:  BRA    0278
+....................                   mostrarNumero (numero); 
+026C:  MOVFF  0F,13
+0270:  MOVFF  0E,12
+0274:  RCALL  0112
+0276:  BRA    0266
+....................                } 
+....................            } 
+....................            if ( input(PIN_B1) == 0 ) { 
+0278:  BSF    F93.1
+027A:  BTFSC  F81.1
+027C:  BRA    02A4
+....................                if (numero < 9999) { 
+027E:  MOVF   0F,W
+0280:  SUBLW  27
+0282:  BNC   0292
+0284:  BNZ   028C
+0286:  MOVF   0E,W
+0288:  SUBLW  0E
+028A:  BNC   0292
+....................                   numero++; 
+028C:  INCF   0E,F
+028E:  BTFSC  FD8.2
+0290:  INCF   0F,F
+....................                } 
+....................                while ( input(PIN_B1) == 0 ) { 
+0292:  BSF    F93.1
+0294:  BTFSC  F81.1
+0296:  BRA    02A4
+....................                   mostrarNumero (numero); 
+0298:  MOVFF  0F,13
+029C:  MOVFF  0E,12
+02A0:  RCALL  0112
+02A2:  BRA    0292
+....................                } 
+....................            } 
+....................            if ( input(PIN_B2) == 0) { 
+02A4:  BSF    F93.2
+02A6:  BTFSC  F81.2
+02A8:  BRA    02C0
+....................                modo = 1; // contagem regressiva 
+02AA:  MOVLW  01
+02AC:  MOVWF  10
+....................                while ( input(PIN_B2) == 0 ) { 
+02AE:  BSF    F93.2
+02B0:  BTFSC  F81.2
+02B2:  BRA    02C0
+....................                   mostrarNumero (numero); 
+02B4:  MOVFF  0F,13
+02B8:  MOVFF  0E,12
+02BC:  RCALL  0112
+02BE:  BRA    02AE
+....................                } 
+....................            } 
+....................       } 
+....................        
+....................       if (modo == 1) { 
+02C0:  DECFSZ 10,W
+02C2:  BRA    02E2
+....................          if (numero > 0) { 
+02C4:  MOVF   0E,F
+02C6:  BNZ   02CC
+02C8:  MOVF   0F,F
+02CA:  BZ    02E0
+....................             contador++; 
+02CC:  INCF   11,F
+....................             if (contador == 10) { 
+02CE:  MOVF   11,W
+02D0:  SUBLW  0A
+02D2:  BNZ   02DE
+....................                numero--; 
+02D4:  MOVF   0E,W
+02D6:  BTFSC  FD8.2
+02D8:  DECF   0F,F
+02DA:  DECF   0E,F
+....................                contador = 0; 
+02DC:  CLRF   11
+....................             } 
+....................          } else { 
+02DE:  BRA    02E2
+....................             modo = 0; // configuração 
+02E0:  CLRF   10
+....................          } 
+....................       } 
+....................       
+....................       mostrarNumero (numero); 
+02E2:  MOVFF  0F,13
+02E6:  MOVFF  0E,12
+02EA:  RCALL  0112
+02EC:  BRA    024C
+....................    } 
+....................     
+.................... } 
+02EE:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C03F   PLL12 CPUDIV4 USBDIV XT FCMEN IESO
+   Word  2: 1E26   PUT BROWNOUT VREGEN NOWDT WDT32768
+   Word  3: 0700   CCP2C1 PBADEN LPT1OSC NOMCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

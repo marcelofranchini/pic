@@ -1,0 +1,57 @@
+[PROJECT]
+Target=aula3.hex
+Processor_Text=PIC16F628A
+CCSVersion=5.084d
+Compiler=PCM
+[Target Data]
+FileList=aula3.c
+[aula3.c]
+Type=4
+[mru-list]
+1=aula3.c
+
+[defines]
+buildcount=5
+
+[Opened Files]
+1=contador-regressivo-parte1.c
+t1=1
+2=contador-regressivo-parte1.c
+t2=6
+Count=1
+
+[ProjectLog]
+Days=2
+D1=12-07-2019
+D1_L=11
+D1_L1=[51284]Started Editing.
+D1_L2=[51314]Stopped Editing.
+TotalEdit=18
+TotalDebug=0
+D1_E=6
+D1_D=0
+D1_L3=[51314]Project Closed.
+D1_L4=[51336]Project Opened.
+D1_L5=[51395]Started Editing.
+D1_L6=[51417]Stopped Editing.
+D1_L7=[51417]Project Closed.
+D1_L8=[51745]Project Opened.
+D1_L9=[51773]Started Editing.
+D1_L10=[51963]Stopped Editing.
+D1_L11=[51963]Project Closed.
+D2=16-07-2019
+D2_L=6
+D2_L1=[41794]Project Opened.
+D2_L2=[42239]Started Editing.
+D2_L3=[42655]Stopped Editing.
+D2_L4=[50205]Started Editing.
+D2_L5=[50756]Stopped Editing.
+D2_E=12
+D2_D=0
+D2_L6=[50756]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=aula3 (main)

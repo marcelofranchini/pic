@@ -1,0 +1,9 @@
+#include <18F4550.h>
+#fuses HS, MCLR, NOWDT
+#use delay(clock=20MHz)
+
+#include <lcd.c>
+
+void main () {
+
+   lcd_init();

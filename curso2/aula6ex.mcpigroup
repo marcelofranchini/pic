@@ -1,0 +1,6 @@
+[PROJECTS]
+Count=2
+Project0=Aula5(Pic12Osc).mcppi
+Project1=Aula6(Btn_led).mcppi
+[ActiveProject]
+Index=1

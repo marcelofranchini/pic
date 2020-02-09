@@ -1,0 +1,53 @@
+#include <18F4550.h>
+#device adc = 10
+#fuses HS, NOWDT
+#use delay(clock=20MHz)
+
+#define LCD_DB0  PIN_D0
+#define LCD_DB1  PIN_D1
+#define LCD_DB2  PIN_D2
+#define LCD_DB3  PIN_D3
+#define LCD_DB4  PIN_D4
+#define LCD_DB5  PIN_D5
+#define LCD_DB6  PIN_D6
+#define LCD_DB7  PIN_D7
+
+
+#define LCD_E PIN_E1
+#define LCD_RS PIN_E2
+
+
+#include <flex_lcd.c>
+
+int main() {
+
+   unsigned int16 port1;
+   unsigned int16 port2;
+
+
+   lcd_init();
+   
+   setup_adc(ADC_CLOCK_INTERNAL);
+   setup_adc_ports(AN0_TO_AN1);
+   set_adc_channel(0);
+
+
+      while(true) {
+      set_adc_channel(0);
+      delay_ms(10);
+      port1 = read_adc();
+      delay_ms(10);
+      
+      
+      
+      set_adc_channel(1);
+      delay_ms(10);
+      port1 = read_adc();
+      delay_ms(10);
+      
+      printf(LCD_PUTC, "\f Port1: %lu\n Port2: %lu", port1, port2);
+
+
+}
+
+}

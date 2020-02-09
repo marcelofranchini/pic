@@ -1,0 +1,59 @@
+[PROJECT]
+Target=Display 2.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.084d
+Compiler=PCH
+[Target Data]
+FileList=Display 2.c
+[Display 2.c]
+Type=4
+[mru-list]
+1=Display 2.c
+
+[defines]
+buildcount=22
+
+[Opened Files]
+1=..\TecladoMatricial\tecladoMatric.c
+t1=9
+Count=1
+2=Display 2.c
+t2=1
+3=LCD_ex2.c
+t3=1
+
+[ProjectLog]
+Days=2
+D1=18-07-2019
+D1_L=9
+D1_L1=[40747]Stopped Editing.
+D1_L2=[40869]Started Editing.
+D1_L3=[41450]Stopped Editing.
+D1_L4=[41753]Started Editing.
+D1_L5=[42056]Stopped Editing.
+D1_L6=[47147]Started Editing.
+D1_L7=[48487]Stopped Editing.
+D1_L8=[50488]Started Editing.
+D1_L9=[50806]Stopped Editing.
+D2=19-07-2019
+D2_L=10
+D2_L1=[33807]Project Opened.
+D2_L2=[33814]Started Editing.
+D2_L3=[34215]Stopped Editing.
+D2_L4=[37740]Started Editing.
+D2_L5=[38040]Stopped Editing.
+D2_L6=[38456]Started Editing.
+D2_L7=[38633]Stopped Editing.
+TotalEdit=5
+TotalDebug=0
+D2_E=5
+D2_D=0
+D2_L8=[38633]Project Closed.
+D2_L9=[38768]Project Opened.
+D2_L10=[38782]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=Display 2 (main)

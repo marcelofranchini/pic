@@ -1,0 +1,13 @@
+#include <18F4550.h>
+#fuses HS, NOMCLR, NOWDT
+#use delay(clock=20MHz)
+
+#include <lcd.c>
+
+void main () {
+
+   lcd_init();
+   
+   printf(LCD_PUTC, "INDENTIFIQUE-SE   \n  OI",);
+
+}

@@ -1,0 +1,98 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     opcao
+005-006 @sprintf_string
+007     executarModo.op
+007     lcd_init.i
+007     MAIN.@SCRATCH1
+008     lcd_init.@SCRATCH1
+008     @PSTRINGC_683.@SCRATCH1
+009     @PSTRINGC_683.@SCRATCH2
+00A     lcd_putc.c
+00B     @delay_ms1.P1
+00B     lcd_gotoxy.x
+00C     lcd_gotoxy.y
+00D     lcd_gotoxy.address
+00E     lcd_gotoxy.@SCRATCH1
+00F     lcd_send_byte.address
+010     lcd_send_byte.n
+011     lcd_send_byte.@SCRATCH1
+012     lcd_send_nibble.nibble
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const692.call
+00002A  @const697.call
+000044  @const698.call
+00005E  @delay_ms1
+000084  lcd_send_nibble
+0000C8  lcd_send_byte
+000104  lcd_init
+000154  lcd_gotoxy
+000178  lcd_putc
+0001BC  @PSTRINGC_683
+0001DC  executarModo
+00024C  @cinit1
+00024C  MAIN
+000262  @cinit2
+
+Project Directory:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\display 16x2 2\
+
+Project Files:
+    Display 2.c                                             [19-jul-19 09:25  CRC=5318BFE1]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [06-abr-19 10:10  CRC=1CE50E9D]
+    flex_lcd.c                                              [06-mai-18 21:06  CRC=2F237181]
+
+Source signature=CE44B180
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=EE43
+
+Units:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\display 16x2 2\Display 2 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   Display 2.xsym
+    Errors:      Display 2.err
+    Ext Symbols: Display 2.esym
+    INHX32:      Display 2.hex
+    Symbols:     Display 2.sym
+    List:        Display 2.lst
+    Debug/COFF:  Display 2.cof
+    Project:     Display 2.ccspjt
+    Call Tree:   Display 2.tre
+    Statistics:  Display 2.STA

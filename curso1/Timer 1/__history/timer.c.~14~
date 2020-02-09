@@ -1,0 +1,28 @@
+#include <16F628A.h>
+#fuses XT, MCLR, NOWDT
+#use delay(clock = 4MHZ)
+
+
+#INT_TIMER0
+void interrupcao_t0(){
+     clear_interrupt(INT_TIMER0);
+     output_toggle(PIN_B2);
+
+}
+
+
+void main() {
+      
+      enable_interrupts(GLOBAL); // chave geral de interrupções.
+      enable_interrupts(INT_TIMER0);
+   
+      setup_timer_0(T0_INTERNAL | T0_DIV_4); // t0_internal é a fonte do clock, prescaler 1 nao tem... | bit a bit
+   
+   
+      while(true) {
+      output_toggle(PIN_B0);
+      delay_ms(1000);
+      
+      }
+
+}

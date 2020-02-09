@@ -1,0 +1,100 @@
+ #include <16F628A.h>
+#fuses XT
+#use delay( clock=4MHz )
+
+void  main () {
+   
+   int1 btn1 = 0;
+   int1 btn2 = 0;
+   
+   while(true) {
+      
+       btn1 = input ( PIN_A1 );
+      if (btn1 == 0) {
+         output_bit (PIN_B0, 1 );
+      } else {
+         output_bit (PIN_B0, 0 );
+      }
+      
+      
+      btn2 = input ( PIN_A2 );
+      if (btn2 == 0) {
+         output_bit (PIN_B1, 1 );
+      } else {
+         output_bit (PIN_B1, 0 );
+      }
+      
+      
+      if( btn1 == 0 && btn2 == 0){
+      output_high(PIN_B0); 
+      delay_ms(100);
+      output_low(PIN_B0);
+      delay_ms(100); 
+      }
+      
+      else if ( btn1 == 0 && btn2 == 1){
+      output_high(PIN_B0); 
+      delay_ms(500);
+      output_low(PIN_B0);
+      delay_ms(500);
+      }
+      
+      else if ( btn1 == 1 && btn2 == 0){
+      delay_ms(1000);
+      output_high(PIN_B0); 
+      delay_ms(1000);
+      output_low(PIN_B0);
+      delay_ms(1000);
+      }
+      
+      else{
+      output_high(PIN_B0); 
+      delay_ms(2000);
+     output_low(PIN_B0);
+     delay_ms(2000);
+      }
+      
+   }
+   
+}
+
+
+/*
+
+#include <16F628.h>
+#fuses XT, NOWDT, NOPROTECT, NOPUT
+#use delay( clock=4MHz )
+void main () {
+   int btn1 = 0;
+   int btn2 = 0;
+   
+   while (true) {
+       if (!input(PIN_A1)) {
+         btn1 = !btn1;
+         while(!input(PIN_A1));
+       }
+       if (!input(PIN_A2)) {
+         btn2 = !btn2;
+         while(!input(PIN_A2));
+       }
+       
+       if (btn1 == 0 && btn2 == 0) {
+         delay_ms(100);
+       }
+       
+       if (btn1 == 0 && btn2 == 1) {
+         delay_ms(500);
+       }
+       
+       if (btn1 == 1 && btn2 == 0) {
+         delay_ms(1000);
+       }
+       
+       if (btn1 == 1 && btn2 == 1) {
+         delay_ms(2000);
+       }
+       
+       output_toggle(PIN_B0);
+   }
+   
+}*/

@@ -1,0 +1,12 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F877A -DL -O11111114 -fo16 -N"C:\Users\Marcelo Franchini\Desktop\Pic\Mikro\Curso Pic WR\Aula21(PIC16F877A_Termometro).mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\Users\Marcelo Franchini\Desktop\Pic\Mikro\Curso Pic WR\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -IP"C:\Users\Marcelo Franchini\Desktop\Pic\Mikro\Curso Pic WR\" "Aula21_PIC16F877A_Termometro_.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CString.mcl" "__Lib_Conversions.mcl" "__Lib_ADC_A_C.mcl" "__Lib_UART_c67.mcl"	 
+hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
+diagnostics: 0	122	Compilation Started	Aula21_PIC16F877A_Termometro_.c
+warning: 18	1509	Generated baud rate is 9615 bps (error = 0.16 percent)	Aula21_PIC16F877A_Termometro_.c
+diagnostics: 67	123	Compiled Successfully	Aula21_PIC16F877A_Termometro_.c
+diagnostics: 0	127	All files Compiled in 16 ms	 
+hint: 0	1144	Used RAM (bytes): 51 (14%)  Free RAM (bytes): 301 (86%)	Used RAM (bytes): 51 (14%)  Free RAM (bytes): 301 (86%)
+hint: 0	1144	Used ROM (program words): 1095 (13%)  Free ROM (program words): 7097 (87%)	Used ROM (program words): 1095 (13%)  Free ROM (program words): 7097 (87%)
+diagnostics: 0	125	Project Linked Successfully	Aula21(PIC16F877A_Termometro).mcppi
+diagnostics: 0	128	Linked in 15 ms	 
+diagnostics: 0	129	Project 'Aula21(PIC16F877A_Termometro).mcppi' completed: 47 ms	 
+diagnostics: 0	103	Finished successfully: 05 set 2019, 14:46:29	Aula21(PIC16F877A_Termometro).mcppi

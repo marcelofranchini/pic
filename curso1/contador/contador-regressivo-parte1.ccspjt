@@ -1,0 +1,71 @@
+[PROJECT]
+Target=contador-regressivo-parte1.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.084d
+Compiler=PCH
+[Target Data]
+FileList=contador-regressivo-parte1.c
+[contador-regressivo-parte1.c]
+Type=4
+[mru-list]
+1=contador-regressivo-parte1.c
+
+[defines]
+buildcount=36
+
+[ProjectLog]
+Days=2
+D1=16-07-2019
+D1_L=11
+D1_L1=[50946]Started Editing.
+D1_L2=[51366]Stopped Editing.
+D1_L3=[51587]Started Editing.
+D1_L4=[51893]Stopped Editing.
+D1_L5=[52625]Started Editing.
+D1_L6=[53326]Stopped Editing.
+D1_L7=[53359]Started Editing.
+D1_L8=[54224]Stopped Editing.
+D1_L9=[54969]Started Editing.
+D1_L10=[55324]Stopped Editing.
+TotalEdit=53
+TotalDebug=0
+D1_E=20
+D1_D=0
+D1_L11=[57106]Project Closed.
+D2=17-07-2019
+D2_L=20
+D2_L1=[36232]Project Opened.
+D2_L2=[36254]Started Editing.
+D2_L3=[36577]Stopped Editing.
+D2_L4=[37141]Started Editing.
+D2_L5=[37499]Stopped Editing.
+D2_L6=[37939]Started Editing.
+D2_L7=[38517]Stopped Editing.
+D2_L8=[38680]Started Editing.
+D2_L9=[39651]Stopped Editing.
+D2_L10=[39851]Started Editing.
+D2_L11=[40825]Stopped Editing.
+D2_L12=[41028]Started Editing.
+D2_L13=[41342]Stopped Editing.
+D2_L14=[52685]Started Editing.
+D2_L15=[52985]Stopped Editing.
+D2_L16=[54168]Started Editing.
+D2_L17=[54468]Stopped Editing.
+D2_L18=[55502]Started Editing.
+D2_L19=[55737]Stopped Editing.
+D2_E=33
+D2_D=0
+D2_L20=[55737]Project Closed.
+
+[Opened Files]
+1=display 16x2\Display16x2.c
+t1=1
+Count=1
+2=E:\Downloads\contador-regressivo-parte3 (1).c
+t2=1
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=contador-regressivo-parte1 (main)

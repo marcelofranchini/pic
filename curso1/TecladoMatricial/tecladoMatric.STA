@@ -1,0 +1,58 @@
+
+ROM used:   964/32768 (3%)
+            964/32768 (3%) including unused fragments
+
+            0.8 Average locations per line
+            12.9 Average locations per statement
+
+RAM used:   27/2048 (1%) at main() level
+            37/2048 (2%) worst case
+
+Stack used: 3 worst case (3 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   99    25  33  tecladoMatric.c
+  854     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  279    50  67  flex_lcd.c
+----- -----
+ 1232    75 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38   2    1             @delay_ms1
+0     20   1    0             @const670
+0     68   4    1    326  2.8  lcd_send_nibble
+0     60   3    3    235  3.8  lcd_send_byte
+0     80   4    2    380  4.7  lcd_init
+0     36   2    4    186  5.5  lcd_gotoxy
+0     66   3    1    272  4.1  lcd_putc
+0    230  12    5    395  5.8  lerTeclado
+0     62   3    6     59  1.6  @WRITEBITA
+0     50   3    5             @READBITA
+0     46   2    1     83  2.5  pular
+0    160   8    2    300  4.0  MAIN
+0     10   1    0             @const709
+0     34   2    2             @PSTRINGC_683
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               9
+    Statements              75
+    Comments                197
+    Volume (V)              3595
+    Difficulty (D)          34.3
+    Effort to implement (E) 123312
+    Time to implement (T)   1 hours, 54 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   14
+    Maintainability (MI)    146
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   960  31804  
+
+
+

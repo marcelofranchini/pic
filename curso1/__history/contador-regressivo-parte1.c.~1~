@@ -1,0 +1,32 @@
+#include <18F4550.h>
+#fuses XT, NOMCLR, NOWDT
+#use delay(clock=4MHz)
+
+int8 segmentos[] = {
+   0b00111111, 0b00000110, 0b01011011, 0b01001111,
+   0b01100110, 0b01101101, 0b01111100, 0b00000111,
+   0b01111111, 0b01100111
+};
+
+void ativarDisplay(int pino, int numero) {
+   output_bit (PIN_A3, 0);
+   output_bit (PIN_A4, 0);
+   output_bit (PIN_A5, 0);
+   output_bit (PIN_A2, 0);  
+   
+   output_bit (pino, 1);
+   
+   output_d( segmentos[numero] );
+   delay_ms(25);
+}
+
+void main () {
+   
+   while(true) {
+      ativarDisplay(PIN_A2, 1);
+      ativarDisplay(PIN_A3, 2);
+      ativarDisplay(PIN_A4, 3);
+      ativarDisplay(PIN_A5, 4);
+   }
+   
+}

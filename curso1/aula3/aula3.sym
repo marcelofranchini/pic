@@ -1,0 +1,60 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01F.6   C1OUT
+01F.7   C2OUT
+020-029 segmentos
+02A     main.numero
+02B     main.@SCRATCH1
+02C     @delay_ms1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09B-09C @READ_PROGRAM_MEMORY8.P1
+
+ROM Allocation:
+000004  @delay_ms1
+000019  @cinit1
+000019  main
+00001E  @cinit2
+
+Project Directory:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\
+
+Project Files:
+    aula3.c                                                 [16-jul-19 14:01  CRC=BFC6CA66]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h [06-abr-19 10:06  CRC=49452EBF]
+
+Source signature=525127E4
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=2773
+
+Units:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\aula3 (main)
+
+Compiler Settings:
+    Processor:      PIC16F628A
+    Pointer Size:   16
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   aula3.xsym
+    Errors:      aula3.err
+    Ext Symbols: aula3.esym
+    INHX8:       aula3.hex
+    Symbols:     aula3.sym
+    List:        aula3.lst
+    Debug/COFF:  aula3.cof
+    Project:     aula3.ccspjt
+    Call Tree:   aula3.tre
+    Statistics:  aula3.STA

@@ -1,0 +1,103 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-006 MAIN.port1
+007-008 MAIN.port2
+009     lcd_init.i
+009-00A @PRINTF_LU_683.P1
+009     @PSTRINGCN_683.P2
+00A     lcd_init.@SCRATCH1
+00A     @PSTRINGCN_683.@SCRATCH1
+00B     @PSTRINGCN_683.@SCRATCH2
+00B     @PRINTF_LU_683.@SCRATCH1
+00C     @PRINTF_LU_683.@SCRATCH2
+00D     @PRINTF_LU_683.@SCRATCH3
+00E     @PRINTF_LU_683.@SCRATCH4
+00F     @PRINTF_LU_683.@SCRATCH5
+010     @PRINTF_LU_683.@SCRATCH6
+011     @PRINTF_LU_683.@SCRATCH7
+012     lcd_putc.c
+013     lcd_gotoxy.x
+013     @delay_ms1.P1
+014     lcd_gotoxy.y
+015     lcd_gotoxy.address
+016     lcd_gotoxy.@SCRATCH1
+017     lcd_send_byte.address
+018     lcd_send_byte.n
+019     lcd_send_byte.@SCRATCH1
+01A     lcd_send_nibble.nibble
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const694.call
+000032  @delay_ms1
+000058  lcd_send_nibble
+00009C  lcd_send_byte
+0000D8  lcd_init
+000128  lcd_gotoxy
+00014C  lcd_putc
+00018E  @PSTRINGCN_683
+0001AC  @PRINTF_LU_683
+000266  MAIN
+000266  @cinit1
+000276  @cinit2
+
+Project Directory:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\tensao\
+
+Project Files:
+    Tensao.c                                                [23-jul-19 14:02  CRC=A694580A]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [06-abr-19 10:10  CRC=1CE50E9D]
+    flex_lcd.c                                              [06-mai-18 21:06  CRC=2F237181]
+
+Source signature=21C049A9
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=3185
+
+Units:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\tensao\Tensao (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   Tensao.xsym
+    Errors:      Tensao.err
+    Ext Symbols: Tensao.esym
+    INHX32:      Tensao.hex
+    Symbols:     Tensao.sym
+    List:        Tensao.lst
+    Debug/COFF:  Tensao.cof
+    Project:     Tensao.ccspjt
+    Call Tree:   Tensao.tre
+    Statistics:  Tensao.STA

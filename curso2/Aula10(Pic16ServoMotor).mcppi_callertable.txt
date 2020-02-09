@@ -1,0 +1,4 @@
+main
+	servo1_horario
+	servo1_antiHorario
+	servo1_centro

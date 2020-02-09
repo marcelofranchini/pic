@@ -1,0 +1,65 @@
+[PROJECT]
+Target=tecladoMatric.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.084d
+Compiler=PCH
+[Target Data]
+FileList=tecladoMatric.c
+[tecladoMatric.c]
+Type=4
+[mru-list]
+1=tecladoMatric.c
+
+[defines]
+buildcount=30
+
+[Opened Files]
+1=..\tensao\Tensao.c
+t1=1
+Count=1
+
+[ProjectLog]
+Days=3
+D1=19-07-2019
+D1_L=14
+D1_L1=[39226]Stopped Editing.
+D1_L2=[39237]Started Editing.
+D1_L3=[39990]Stopped Editing.
+D1_L4=[41060]Started Editing.
+D1_L5=[41400]Stopped Editing.
+D1_L6=[42598]Started Editing.
+D1_L7=[43118]Stopped Editing.
+D1_L8=[43329]Started Editing.
+D1_L9=[44491]Stopped Editing.
+D1_L10=[47622]Started Editing.
+D1_L11=[49229]Stopped Editing.
+D1_L12=[50013]Started Editing.
+D1_L13=[51556]Stopped Editing.
+TotalEdit=84
+TotalDebug=0
+D1_E=70
+D1_D=0
+D1_L14=[53836]Project Closed.
+D2=22-07-2019
+D2_L=1
+D2_L1=[33011]Project Opened.
+D3=23-07-2019
+D3_L=10
+D3_L1=[40915]Project Opened.
+D3_L2=[46324]Started Editing.
+D3_L3=[46624]Stopped Editing.
+D3_L4=[47330]Started Editing.
+D3_L5=[47990]Stopped Editing.
+D3_L6=[48615]Started Editing.
+D3_L7=[49087]Stopped Editing.
+D3_L8=[49417]Started Editing.
+D3_L9=[49703]Stopped Editing.
+D3_E=14
+D3_D=0
+D3_L10=[49703]Project Closed.
+[Units]
+Count=1
+1=tecladoMatric (main)
+
+[fileformats]
+forcecoff=0

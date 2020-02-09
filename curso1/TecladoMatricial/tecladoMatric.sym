@@ -1,0 +1,112 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-00F teclado
+010-013 linhas
+014-016 colunas
+017-018 @sprintf_string
+019     MAIN.leitura
+01A     lcd_init.i
+01A     lerTeclado.tecla
+01A     pular.@SCRATCH1
+01A     MAIN.@SCRATCH1
+01A     @PSTRINGC_683.@SCRATCH1
+01B     lerTeclado.i
+01B     lcd_init.@SCRATCH1
+01B     @PSTRINGC_683.@SCRATCH2
+01C     lerTeclado.j
+01C     lcd_putc.c
+01D     lcd_gotoxy.x
+01D     @delay_ms1.P1
+01D     lerTeclado.@SCRATCH1
+01E     @WRITEBITA.P1
+01E     lcd_gotoxy.y
+01E     @READBITA.P1
+01E     lerTeclado.@SCRATCH2
+01F     @WRITEBITA.P1
+01F     lcd_gotoxy.address
+01F-020 @READBITA.P1
+020-021 @WRITEBITA.P1
+020     lcd_gotoxy.@SCRATCH1
+021     lcd_send_byte.address
+022     lcd_send_byte.n
+023     lcd_send_byte.@SCRATCH1
+024     lcd_send_nibble.nibble
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const709.call
+000022  @delay_ms1
+000048  lcd_send_nibble
+00008C  lcd_send_byte
+0000C8  lcd_init
+000118  lcd_gotoxy
+00013C  lcd_putc
+00017E  @PSTRINGC_683
+0001A0  @WRITEBITA
+0001DE  @READBITA
+000210  lerTeclado
+0002F6  pular
+000324  MAIN
+000324  @cinit1
+000338  @cinit2
+
+Project Directory:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\TecladoMatricial\
+
+Project Files:
+    tecladoMatric.c                                         [19-jul-19 14:14  CRC=3C5A8839]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [06-abr-19 10:10  CRC=1CE50E9D]
+    flex_lcd.c                                              [06-mai-18 21:06  CRC=2F237181]
+
+Source signature=B78679D8
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=514A
+
+Units:
+    C:\Users\Marcelo Franchini\Desktop\Pic\css\TecladoMatricial\tecladoMatric (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   tecladoMatric.xsym
+    Errors:      tecladoMatric.err
+    Ext Symbols: tecladoMatric.esym
+    INHX32:      tecladoMatric.hex
+    Symbols:     tecladoMatric.sym
+    List:        tecladoMatric.lst
+    Debug/COFF:  tecladoMatric.cof
+    Project:     tecladoMatric.ccspjt
+    Call Tree:   tecladoMatric.tre
+    Statistics:  tecladoMatric.STA

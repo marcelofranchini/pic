@@ -1,0 +1,28 @@
+#include <16F628A.h>
+#fuses XT, MCLR, NOWDT
+#use delay(clock = 4MHZ)
+
+
+enable_interrupts(GLOBAL); // chave geral de interrupções.
+enable_interrupts(INT_TIMER0);
+
+
+int main() {
+      
+      while(true) {
+      output_toggle(PIN_B0);
+      delay_ms(1000);
+      output_toggle(PIN_B2);
+      delay_ms(1000);
+      
+      output_toggle(PIN_B4);
+      delay_ms(1000);
+      
+      output_toggle(PIN_B6);
+      delay_ms(1000);
+      
+      
+      
+      }
+
+}

@@ -1,0 +1,49 @@
+
+ROM used:   752/32768 (2%)
+            752/32768 (2%) including unused fragments
+
+            0.8 Average locations per line
+            14.2 Average locations per statement
+
+RAM used:   19/2048 (1%) at main() level
+            31/2048 (2%) worst case
+
+Stack used: 3 worst case (3 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   88    53 100  contador-regressivo-parte1.c
+  854     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+----- -----
+  942    53 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     42   3    1             @delay_ms1
+0     82   5    3    231  2.4  ativarDisplay
+0     62   4    6             @WRITEBITA
+0    250  17    8    406  3.6  mostrarNumero
+0     84   6    5             @DIV1616
+0    228  15    1    789  5.8  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               3
+    Statements              53
+    Comments                157
+    Volume (V)              1809
+    Difficulty (D)          11.4
+    Effort to implement (E) 20603
+    Time to implement (T)   19 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   9
+    Maintainability (MI)    42
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   748  32016  
+
+
+
